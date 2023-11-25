@@ -30,7 +30,7 @@ class CepRepository {
 
             if (retorno.isSuccessful){
                 //chamar
-                val endereco = retorno.body()
+               // val endereco = retorno.body()
 
               //  binding.txtResult.text = endereco?.logradouro.toString()
               //  binding.txtResult2.text = endereco?.bairro.toString()
@@ -39,7 +39,7 @@ class CepRepository {
 //                    val rua = binding.txtResult.text.toString().trim()
 //                        endereco?.logradouro = rua
 
-                    Log.i("Ta", "ende:  $endereco")
+                 //   Log.i("Ta", "ende:  $endereco")
                 }
 
             }

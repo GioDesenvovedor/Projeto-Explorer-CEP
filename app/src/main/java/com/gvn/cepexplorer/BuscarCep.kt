@@ -1,5 +1,6 @@
 package com.gvn.cepexplorer
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,6 +29,8 @@ class BuscarCep : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+
+
         //esconder actionBar
         supportActionBar?.hide()
         window.statusBarColor = Color.parseColor("#52057B")
@@ -38,6 +41,7 @@ class BuscarCep : AppCompatActivity() {
     private fun btnBuscarCep() {
        binding.btnBuscar.setOnClickListener {
            CoroutineScope(Dispatchers.IO).launch {
+
                recuperarEndereco()
            }
        }
@@ -59,13 +63,24 @@ class BuscarCep : AppCompatActivity() {
             e.printStackTrace()
             Log.i("T", "ERRO RECUPERAR")
         }
-        if (retorno != null){
+        if (retorno != null) {
 
-            if (retorno.isSuccessful){
+            if (retorno.isSuccessful) {
                 //chamar
+
                 val endereco = retorno.body()
 
-                binding.txtResult.text = endereco?.logradouro.toString()
+                val bundle = Bundle()
+                bundle.putString("logradouro", endereco?.logradouro)
+                bundle.putString("bairro", endereco?.bairro)
+                bundle.putString("cidade", endereco?.uf)
+
+                val intent = Intent(this, CepResultado::class.java)
+                intent.putExtras(bundle)
+                startActivity(intent)
+
+
+                /*  binding.txtResult.text = endereco?.logradouro.toString()
                 binding.txtResult2.text = endereco?.bairro.toString()
                 binding.txtResult3.text = endereco?.uf.toString()
                 if (cepDigitado != null && cepDigitado != null){
@@ -75,15 +90,15 @@ class BuscarCep : AppCompatActivity() {
                     Log.i("Ta", "ende:  $endereco")
                 }
 
-            }
+            }*/
 
 
-
-            //
-            //verifica pelo log se der erro, apresentar o código de erro
-        }else{
-            withContext(Dispatchers.Main){
-                Log.i("tag","ERRO CODE: ${retorno?.code()}")
+                //
+                //verifica pelo log se der erro, apresentar o código de erro
+            } else {
+                withContext(Dispatchers.Main) {
+                    Log.i("tag", "ERRO CODE: ${retorno?.code()}")
+                }
             }
         }
     }
