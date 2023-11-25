@@ -47,9 +47,11 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editInput"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="50dp"
+                android:inputType="number"
                 android:background="@drawable/text_perso"
-                android:hint="Digite o Cep" />
+                android:hint="Digite o Cep"
+                android:textSize="15sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -60,9 +62,9 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="25dp"
-            android:text="Digite o cep sem traços ou caracteres EXEMPLO: 00000000"
+            android:text="Digite o cep sem traços ou caracteres EXEMPLO: 01311200"
             android:textColor="#E5CFF7"
-            android:textSize="12sp"
+            android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="@+id/inputyCep"
             app:layout_constraintStart_toStartOf="@+id/inputyCep"
             app:layout_constraintTop_toBottomOf="@+id/inputyCep" />
