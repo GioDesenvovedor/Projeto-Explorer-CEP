@@ -1,6 +1,6 @@
 # Projeto-Explorer-CEP
-ExplorerCEP - Aplicativo Android para Busca de CEPs
-ExplorerCEP é uma aplicação Android elegante e eficiente que permite aos usuários buscar informações de endereço a partir de CEPs.
+ExplorerCEP - Aplicativo Android para Busca de CEPs, 
+O ExplorerCEP é uma aplicação Android elegante e eficiente que permite aos usuários buscar informações de endereço a partir de CEPs.
 Com uma interface intuitiva e recursos avançados, o aplicativo oferece uma experiência de usuário aprimorada.
 
 # Como Utilizar:
