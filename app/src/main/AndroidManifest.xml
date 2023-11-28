@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,13 +15,16 @@
         android:theme="@style/Theme.CEPExplorer"
         tools:targetApi="31">
         <activity
-            android:name=".CepResultado"
+            android:name=".view.CepSalvo"
             android:exported="false" />
         <activity
-            android:name=".BuscarCep"
+            android:name=".view.CepResultado"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.BuscarCep"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
