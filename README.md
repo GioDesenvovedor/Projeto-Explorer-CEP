@@ -19,10 +19,12 @@ Salve seus CEPs Favoritos: Guarde CEPs para referência futura, proporcionando u
 
 # Tecnologias Utilizadas:
 •	Kotlin
+•	API
 •	Retrofit
 •	Coroutines
 •	SharedPreferences
 •	RecyclerView
-•	LiveData
+•	LiveData 
 •	Gson
+•	Splash Screen 
 
